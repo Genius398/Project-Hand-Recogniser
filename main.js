@@ -20,7 +20,7 @@ function take_snapshot() {
 
 console.log('ml5 version', ml5.version);
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/5mxzZHkpx/model.json', modelLoaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/MHEn8aHHO/models.json', modelLoaded);
 
 function modelLoaded() {
     console.log("modelLoaded");
@@ -52,27 +52,27 @@ function gotResult(error, results) {
         prediction_2 = results[1].label;
         speak();
 
-        if (results[0].label == "happy") {
+        if (results[0].label == "Thumbs Up") {
             document.getElementById("update_emoji").innerHTML = "&#128552"
         }
 
-        if (results[0] == "sad") {
+        if (results[0] == "Thumbs Down") {
             document.getElementById("update_emoji").innerHTML = "&#128532";
         }
 
-        if (results[0] == "angry") {
+        if (results[0] == "Victory") {
             document.getElementById("update_emoji").innerHTML = "&#128548";
         }
 
-        if (results[1] == "happy") {
+        if (results[1] == "Thumbs Up") {
             document.getElementById("update_emoji2").innerHTML = "&#128552";
         }
 
-        if (results[1] == "sad") {
+        if (results[1] == "Thumbs Down") {
             document.getElementById("update_emoji2").innerHTML = "&#128532";
         }
 
-        if (results[1] == "angry") {
+        if (results[1] == "Victory") {
             document.getElementById("update_emoji2").innerHTML = "&#128548";
         }
     }
